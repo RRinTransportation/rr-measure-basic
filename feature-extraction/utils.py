@@ -301,3 +301,47 @@ def cleanup(abstract):
         raise ValueError("Input must be a string.")
     
     return re.sub(r'\s+', ' ', abstract).strip()
+
+
+def get_context_with_url(location_text, url, context_up_range=2, context_down_range=2):
+    """
+    Extracts the sentence containing the URL along with a specified number of surrounding sentences.
+
+    Args:
+        location_text (str): The input text containing the URL.
+        url (str): The URL to find in the text.
+        context_range (int): The number of sentences before and after the target sentence to include.
+
+    Returns:
+        str: The context containing the URL along with the surrounding sentences, or a message if URL is not found.
+    """
+    # Step 1: Find the position of the URL
+    sentence_index = location_text.find(url)
+
+    # If the URL is found, proceed
+    if sentence_index != -1:
+        # Step 2: Split the text into sentences
+        sentences = re.split(r'(?<=[.!?])\s+', location_text)
+
+        # Step 3: Find the index of the sentence containing the URL
+        target_index = None
+        for index, sentence in enumerate(sentences):
+            if url in sentence:
+                target_index = index
+                break
+
+        # Step 4: Extract the surrounding context (few sentences before and after)
+        if target_index is not None:
+            start_index = max(0, target_index - context_up_range)  # Make sure index is not negative
+            end_index = min(len(sentences), target_index + context_down_range + 1)  # Make sure index does not exceed list length
+
+            # Get the sentences within the specified range
+            surrounding_sentences = sentences[start_index:end_index]
+
+            # Join the sentences to form the context
+            context_info = " ".join(surrounding_sentences)
+            return context_info
+        else:
+            return "URL not found in any sentence."
+    else:
+        return "URL not found in the text."
