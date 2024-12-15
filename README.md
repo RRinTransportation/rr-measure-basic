@@ -13,21 +13,6 @@ conda env create -f environment.yml
 conda activate RR-measure
 ```
 
-### About the Elsevier API usage
-
-#### Get your API key
-
-[Elsevier API](https://dev.elsevier.com/)
-
-#### Safely use your API key
-
-Put the API key in a file named `config.yaml` in the parent directory `../config.yaml` of this GitHub repo. The content of the file should be like this:
-
-```yaml
-elsevier_api:
-    api_key: your_api_key_here
-```
-
 ## Background information for the project
 
 ### IEEE Xplore API to explore the journal
@@ -44,6 +29,8 @@ elsevier_api:
 - 2024-10-01: Project started
 - 2024-11-01: Dataset v0.1 created
 - 2024-11-15: Dataset v1.0 created (10k+ papers from 2019-2024 created)
+- 2024-12-08: P1 feature created
+- 2024-12-15: P2 feature created
 
 ### Data sharing
 
@@ -85,6 +72,7 @@ git push origin main
 
 ### Team
 
+- Many contributors and friends from the Transportation Engineering community
 - [Junyi Ji](https://www.jijunyi.com)
 - [Ruth Lu](https://github.com/erasedbird)
 - [Cathy Wu](https://www.wucathy.com)
