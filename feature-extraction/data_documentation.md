@@ -28,6 +28,26 @@ The metadata is consolidated in the `full-meta-dataset` file, which provides det
 7. **`num_of_links_in_availability_statement`**
    - Specifies the number of links found in the data availability section.
 
+8. **`setup_files`**
+   - True/False. Setup files (ie requirements.txt, build.gradle) present in the repo.
+
+9. **`docker_files`**
+   - True/False. Docker files present in the repo.
+
+10. **`setup_in_readme`**
+   - True/False. Setup instructions, ie packages and versions, present in the README.
+
+11. **`shell_instructions_readme`**
+   - True/False. Instructions about shell commands present in the README.
+
+12. **`notebook_instructions_readme`**
+   - True/False. Instructions about notebooks present in the README.
+
+13. **`code_instructions_readme`**
+   - True/False. Instructions for running code files present in the README.
+
+14. **`has_readme`**
+   - True/False. Github repo includes a readme.md.
 
 ## JSON Files
 ### `url_data.json`
