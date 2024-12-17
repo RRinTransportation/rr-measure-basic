@@ -345,3 +345,40 @@ def get_context_with_url(location_text, url, context_up_range=2, context_down_ra
             return "URL not found in any sentence."
     else:
         return "URL not found in the text."
+    
+
+
+def extract_abstract_from_xml(file_path):
+    """
+    Extracts the abstract from an XML file.
+    
+    Args:
+        file_path (str): The path to the XML file.
+
+    Returns:
+        str: The abstract text, or an empty string if no abstract is found.
+    
+    Example:
+        >>> extract_abstract_from_xml('/path/to/file.xml')
+        'This is the abstract...'
+    """
+    # Parse the XML file
+    tree = ET.parse(file_path)
+    root = tree.getroot()
+
+    # Namespace to handle XML namespaces
+    namespaces = {
+        'xocs': 'http://www.elsevier.com/xml/xocs/dtd',
+        'ce': 'http://www.elsevier.com/xml/common/dtd',
+        'ja': 'http://www.elsevier.com/xml/ja/dtd',
+        'mml': 'http://www.w3.org/1998/Math/MathML'
+    }
+
+    # Extract the abstract
+    abstract = ""
+    abstract_elem = root.find(".//ce:abstract", namespaces)
+    if abstract_elem is not None:
+        # Concatenate all text within the abstract element
+        abstract = "".join(abstract_elem.itertext()).strip()
+
+    return abstract
