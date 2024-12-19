@@ -4,12 +4,14 @@ This document outlines the key components and metadata fields used in the analys
 
 
 ## Metadata Fields
+
 The metadata is consolidated in the `full-meta-dataset` file, which provides details for the analyzed papers.
 
 ### Key Fields
+
 1. **`is_github`**
    - Indicates whether any GitHub links are present in the paper (main paper, excluding the references).
-   
+
 2. **`num_of_github_urls`**
    - Specifies the number of GitHub links found in the paper (main paper, excluding the references).
 
@@ -29,31 +31,35 @@ The metadata is consolidated in the `full-meta-dataset` file, which provides det
    - Specifies the number of links found in the data availability section.
 
 8. **`setup_files`**
-   - True/False. Setup files (ie requirements.txt, build.gradle) present in the repo.
+   - True/False. Setup files (i.e. requirements.txt, build.gradle) present in the repo.
 
 9. **`docker_files`**
    - True/False. Docker files present in the repo.
 
 10. **`setup_in_readme`**
-   - True/False. Setup instructions, ie packages and versions, present in the README.
+    - True/False. Setup instructions, i.e. packages and versions, present in the README.
 
 11. **`shell_instructions_readme`**
-   - True/False. Instructions about shell commands present in the README.
+    - True/False. Instructions about shell commands present in the README.
 
 12. **`notebook_instructions_readme`**
-   - True/False. Instructions about notebooks present in the README.
+    - True/False. Instructions about notebooks present in the README.
 
 13. **`code_instructions_readme`**
-   - True/False. Instructions for running code files present in the README.
+    - True/False. Instructions for running code files present in the README.
 
 14. **`has_readme`**
-   - True/False. Github repo includes a readme.md.
+    - True/False. Github repo includes a readme.md.
+
 
 ## JSON Files
+
 ### `url_data.json`
+
 - **Purpose**: Contains the URLs mentioned in the data availability statement.
 
 ### `github_data.json`
+
 - **Purpose**: Contains URLs in the main text that include `github.com` links.
 - **Note**: Not all GitHub links are necessarily authored by the paper's authors; they may link to other repositories.
 - **Typical Case**: GitHub URLs in the format `github.com/username/repository` cover most cases.
