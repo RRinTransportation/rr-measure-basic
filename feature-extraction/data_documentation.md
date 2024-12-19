@@ -16,13 +16,13 @@ The metadata is consolidated in the `full-meta-dataset` file, which provides det
    - Specifies the number of GitHub links found in the paper (main paper, excluding the references).
 
 3. **`is_availability`**
-   - Indicates whether a ``data availability`` section is present in the paper.
+   - Indicates whether a "data availability" section is present in the paper.
 
 4. **`is_data_mentioned_in_section`**
-   - Flags whether the word ``data`` is mentioned in the section title.
+   - Flags whether the word "data" is mentioned in the section title.
 
 5. **`is_experiment_mentioned_in_section`**
-   - Flags whether the word ``experiment`` is mentioned in the section title.
+   - Flags whether the word "experiment" is mentioned in the section title.
 
 6. **`is_link_in_availability_statement`**
    - Indicates if there are any links present in the data availability section.
@@ -30,27 +30,65 @@ The metadata is consolidated in the `full-meta-dataset` file, which provides det
 7. **`num_of_links_in_availability_statement`**
    - Specifies the number of links found in the data availability section.
 
-8. **`setup_files`**
-   - True/False. Setup files (i.e. requirements.txt, build.gradle) present in the repo.
+8. **`source_description`**
+   - Provides the detailed information about the source of the data, e.g. how the author collected the data.
 
-9. **`docker_files`**
-   - True/False. Docker files present in the repo.
+9. **`real_world`**
+   - Indicates whether the dataset relates to real-world collections or observations. If the network is derived from a real-world dataset, it is considered real-world.
 
-10. **`setup_in_readme`**
-    - True/False. Setup instructions, i.e. packages and versions, present in the README.
+10. **`simulation`**
+    - Flags whether the dataset or experiment is derived from a simulation.
 
-11. **`shell_instructions_readme`**
-    - True/False. Instructions about shell commands present in the README.
+11. **`dataset_size_description`**
+    - Indicates whether there is a description of the dataset size in the paper.
 
-12. **`notebook_instructions_readme`**
-    - True/False. Instructions about notebooks present in the README.
+12. **`data_collection_description`**
+    - Indicates whether the paper describes the methods or procedures used for collecting the data.
 
-13. **`code_instructions_readme`**
-    - True/False. Instructions for running code files present in the README.
+13. **`is_data_mentioned`**
+    - Flags whether the paper explicitly mentions data or datasets in its content (abstract, sections).
 
-14. **`has_readme`**
-    - True/False. Github repo includes a readme.md.
+14. **`setup_files`**
+    - True/False. Indicates if setup files (i.e., requirements.txt, build.gradle) are present in the repository.
 
+15. **`docker_files`**
+    - True/False. Indicates if Docker files are present in the repository.
+
+16. **`setup_in_readme`**
+    - True/False. Indicates if setup instructions, such as packages and versions, are present in the README.
+
+17. **`shell_instructions_readme`**
+    - True/False. Indicates if instructions about shell commands are present in the README.
+
+18. **`notebook_instructions_readme`**
+    - True/False. Indicates if instructions about notebooks are present in the README.
+
+19. **`code_instructions_readme`**
+    - True/False. Indicates if instructions for running code files are present in the README.
+
+20. **`has_readme`**
+    - True/False. Indicates if the GitHub repository includes a README.md file.
+
+21. **`cited_by`**
+    - Provides the number of citations received by the paper (data extracted from Scopus API).
+
+22. **`number_of_authors`**
+    - Indicates the total number of authors involved in the publication.
+
+23. **`country`**
+    - Specifies the primary country of the first author.
+
+24. **`institution`**
+    - Lists the affiliated institution(s) of the first author.
+
+25. **`corresponding_author_country`**
+    - Specifies the country of the corresponding author.
+
+26. **`corresponding_author_name`**
+    - Indicates the name of the corresponding author.
+
+27. **`primary_author_name`**
+    - Specifies the name of the first author.
 
 ## JSON Files
 
