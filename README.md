@@ -70,6 +70,11 @@ git commit -m "message"
 git push origin main
 ```
 
+### Notes for export environment
+
+```sh
+conda env export --no-builds > environment.yml
+```
 ### Team
 
 - Many contributors and friends from the Transportation Engineering community
